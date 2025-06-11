@@ -8,3 +8,9 @@ This application is a React-based animal management system, designed for shelter
    
 ## Testing:
 - Run `npm test` to execute unit tests.
+
+![testing](https://github.com/user-attachments/assets/e85478df-5cfa-4e26-be3e-35c26af4c052)
+
+## Styling with Bootstrap 
+
+>![bootstrapform](https://github.com/user-attachments/assets/a7f5c524-0104-4aeb-bcdd-a96eaf593dc5)
