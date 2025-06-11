@@ -1,25 +1,18 @@
 import "@testing-library/jest-dom";
-import { render, screen
-} from "@testing-library/react";
-import { describe, expect, it, vi
-} from "vitest";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import Animals from "./Animals";
 
 describe("Animals Component", () => {
   it("shows the no-pets message when the array is empty", () => {
     render(
       <Animals
-        animals={
-          []
-        }
+        animals={[]}
         title="random string"
         nopets="No pets here"
-        onDelete={vi.fn()
-        }
-        onAdoptToggle={vi.fn()
-        }
-        onEditImage={vi.fn()
-        }
+        onDelete={vi.fn()}
+        onAdoptToggle={vi.fn()}
+        onEditImage={vi.fn()}
       />,
     );
 
@@ -29,14 +22,24 @@ describe("Animals Component", () => {
   it("shows the no-pets message when the array has pets", () => {
     const samplePets = [
       {
-        species: "",
-        vaccinated: false,
-        imageUrl: "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-508348219-scaled.jpg",
+        species: "Dog",
+        vaccinated: true,
+        imageUrl: "https://placebear.com/300/400",
         kidFriendly: false,
         id: 1,
         adopted: false,
-        name: "",
-        age: "unknown",
+        name: "Bob",
+        age: "11",
+      },
+      {
+        species: "Bird",
+        vaccinated: true,
+        imageUrl: "https://placebear.com/300/400",
+        kidFriendly: false,
+        id: "1d0d070",
+        adopted: false,
+        name: "Dave",
+        age: "110",
       },
       {
         species: "Cat",
@@ -51,21 +54,16 @@ describe("Animals Component", () => {
     ];
     render(
       <Animals
-        animals={samplePets
-        }
+        animals={samplePets}
         title="random string"
         nopets="No pets here"
-        onDelete={vi.fn()
-        }
-        onAdoptToggle={vi.fn()
-        }
-        onEditImage={vi.fn()
-        }
+        onDelete={vi.fn()}
+        onAdoptToggle={vi.fn()}
+        onEditImage={vi.fn()}
       />,
     );
     expect(screen.getAllByText("🗑️")).toHaveLength(3);
-    expect(screen.getAllByText("🗑️")[
-      0
-    ]).toBeInTheDocument();
+    expect(screen.getAllByText("🗑️")[0]).toBeInTheDocument();
+
   });
 });
