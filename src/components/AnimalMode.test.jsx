@@ -22,6 +22,6 @@ describe("Testing the modal", () => {
   it("Renders to the page when props are true", () => {
     render(<AnimalModal {...baseProps} />);
 
-    expect(screen.getByText("Add New Animal")).toBeInTheDocument();
+    expect(screen.getByText("POSSUMS, PERPS, & PETS")).toBeInTheDocument();
   });
 });
