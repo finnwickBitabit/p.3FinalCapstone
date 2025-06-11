@@ -15,7 +15,7 @@ function App() {
   const [form, setForm] = useState({
     name: "",
     species: "",
-    age: "",
+    location: "",
     kidFriendly: false,
     vaccinated: false,
     imageUrl: "",
@@ -60,14 +60,14 @@ function App() {
   }
 
   async function handleAdd() {
-    if (!form.name || !form.species || !form.age) return;
+    if (!form.name || !form.species || !form.location) return;
     const item = {
       id: crypto.randomUUID(),
       name: form.name,
       species: form.species,
       kidFriendly: form.kidFriendly,
       vaccinated: form.vaccinated,
-      age: form.age,
+      location: form.location,
       adopted: false,
       imageUrl:
         form.imageUrl ||
